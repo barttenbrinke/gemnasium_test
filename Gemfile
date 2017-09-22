@@ -1,67 +1,89 @@
-source 'https://rubygems.org' do
-  gem 'rails'
-  gem "sass-rails", "~> 5.0.1"
-  gem 'mysql2'
-  gem 'uglifier'
-  gem 'bundler-audit'
-  gem "slim"
-  gem "kaminari"
-  gem 'activemodel', '~>4.0'
-  gem 'activesupport', '~>4.0'
+source 'http://rubygems.org'
 
-  # Front end
-  gem 'jquery-rails'
-  gem 'modernizr-rails'
-  gem 'bootstrap-sass'
+gem 'i18n', '0.7.0'
+gem 'mysql2', '0.3.17'
+gem 'json', '1.8.1'
+gem 'bcrypt', '3.1.7'
+gem 'mini_magick'
 
-  # Send HTTP secure headers
-  gem 'secure_headers'
+# rails
+gem 'rails', '4.1.7'
+gem 'jbuilder', '~> 2.0'
+gem 'sdoc', '~> 0.4.0',          group: :doc
 
-  # Exception notification
-  gem 'exception_notification'
+# assets
+gem 'sass-rails', '~> 4.0.3'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'jquery-rails'
+gem 'jquery-turbolinks'
+gem 'turbolinks'
+gem 'quiet_assets' # Silence console output
 
-  # Exceptions
-  gem 'rollbar'
-  gem 'pagerduty'
+# bootstrap
+gem 'font-awesome-rails'
+gem 'bootstrap_form', git: 'https://github.com/bootstrap-ruby/rails-bootstrap-forms.git'
 
-  # Connect to Svalbard
-  gem 'httpclient', '>= 2.7.1'
+# backend
+gem 'devise'
+gem 'devise_invitable'
+gem 'inherited_resources'
+gem 'paper_trail'
+gem 'diffy'
+gem 'acts_as_taggable_on'
+gem 'will_paginate'
+gem 'closure_tree'
+gem 'acts_as_list'
 
-  group :test do
-    gem 'timecop'
-    gem 'simplecov', require: false
-    gem 'codeclimate-test-reporter', require: nil
-    gem 'rspec-rails'
-    gem 'webmock'
-    gem "capybara"
-    gem 'poltergeist'
-    gem 'cucumber-rails', require: false
-    gem 'factory_girl_rails'
-    gem 'database_cleaner'
-    gem 'launchy'
-    gem 'brakeman'
-  end
+# uploads
+gem 'carrierwave'
 
-  group :development do
-    gem 'puma'
-    gem 'binding_of_caller'
-    gem 'better_errors'
-    gem 'pry'
-    gem 'listen'
-    gem 'unicorn'
-    gem 'quiet_assets'
-    gem 'travis'
-  end
+# searching
+gem 'searchkick'
 
-  group :deploy do
-    gem 'capistrano-rvm'
-  end
+# frontend
+gem 'redcarpet', '3.2.2'
+gem 'pdfkit'
+gem 'gretel'
 
-  group :development, :test do
-    gem "guard"
-    gem 'guard-bundler'
-    gem 'guard-rails'
-    gem 'guard-rspec'
-    gem "guard-jasmine"
-  end
+gem 'dalli'
+gem 'airbrake'
+
+# Pdf generation
+gem 'wkhtmltopdf-binary'
+
+group :development do
+  gem 'spring'
+  gem 'rspec-rails'
+  gem 'rubocop'
+
+  #gem 'guard'
+  #gem 'guard-rspec'
+  #gem 'guard-rubocop'
+  #gem 'guard-livereload'
+
+  gem 'rack-livereload'
+
+  #gem 'launchy'
+
+  gem 'foreman'
+
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
+  gem 'unicorn'
+
+  # deploy
+  gem 'capistrano', '~> 2.5.15'
+  gem 'capistrano-ext'
+  gem 'capistrano_colors'
+  gem 'capistrano_transmit'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'simplecov'
+  gem 'orderly'
+  gem 'fuubar'
 end
